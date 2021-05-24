@@ -10,7 +10,7 @@
 import tkinter as tk
 from random import randrange
 
-############################################# INITIALISATION VARIABELS GOBALES ####################################################
+############################################# INITIALISATION VARIABLES GLOBALES ####################################################
 WIDTH = 700
 HEIGHT = 500
 LARGEURavcMUR = 650
@@ -190,7 +190,7 @@ def enregistre_sore():
     with open(sauvegarde_score, "a") as save_score:
         save_score.write(str(score) + " " + pseudo.get() + " \n")
 
-##################################################### PROGRAMME PRINCIAPLE ################################################################
+##################################################### PROGRAMME PRINCIPALE ################################################################
 racine = tk.Tk()
 racine.title("Game snake")
 pseudo = tk.StringVar()
@@ -207,7 +207,8 @@ vitesse = tk.Label(racine, text="À quelle vitesse voulez-vous jouer ?",
 boutton_1 = tk.Button(racine, text="Lente", command=lent)
 boutton_2 = tk.Button(racine, text="Moyenne", command=moyen)
 boutton_3 = tk.Button(racine, text="Rapide", command=rapide)
-# positionnement des widjets dans la fenetre du menu principale #
+
+# positionnement des widjets dans la fenètre du menu principale #
 
 titre_menu.grid(row=1, column=1, columnspan=3)
 vitesse.grid(row=3, column=1, columnspan=4)
@@ -218,7 +219,7 @@ boutton_1.grid(row=4, column=1)
 boutton_2.grid(row=4, column=2)
 boutton_3.grid(row=4, column=3)
 
-# Création fenetre du jeu et positionenement widjet # 
+# Création fenètre du jeu et positionenement des widjets # 
 
 canvas = tk.Canvas(racine, bg="green", width=WIDTH, height=HEIGHT)
 canvas.grid(column = 0, row = 0, columnspan = 2)
@@ -233,7 +234,7 @@ label = tk.Label(racine, textvariable = pseudo)
 label.grid(columnspan=2, row= 3)
 label.grid_remove()
 
-#création du mur du Cnavas #
+#création du mur du Canvas #
 
 line_1 = canvas.create_line(0, 0, 700, 0, fill="black", width=45)
 line_2 = canvas.create_line(700, 0, 700, 500, fill="black", width=45)
